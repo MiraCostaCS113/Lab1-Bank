@@ -75,7 +75,7 @@ public class CheckingAccountTest {
         //Act
         checkingAccount.withdrawal(50);
         //Assert
-        Assertions.assertEquals(50, checkingAccount.getBalance(), "Balance should be 50.");
+        Assertions.assertEquals(48.5, checkingAccount.getBalance(), "Balance should be 48.5.");
     }
 
     @Test
@@ -87,7 +87,7 @@ public class CheckingAccountTest {
         //Act
         checkingAccount.withdrawal(50);
         //Assert
-        Assertions.assertEquals(50, checkingAccount.getBalance(), "Balance should be 50.");
+        Assertions.assertEquals(49, checkingAccount.getBalance(), "Balance should be 49.");
     }
 
     @Test
@@ -99,7 +99,7 @@ public class CheckingAccountTest {
         //Act
         checkingAccount.withdrawal(50);
         //Assert
-        Assertions.assertEquals(50, checkingAccount.getBalance(), "Balance should be 050.");
+        Assertions.assertEquals(49.5, checkingAccount.getBalance(), "Balance should be 49.5.");
     }
 
 }

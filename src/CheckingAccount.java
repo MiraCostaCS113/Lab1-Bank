@@ -45,6 +45,8 @@ public class CheckingAccount extends Account{
 
     public double withdrawal(double amount){
         if(amount>0) {
+            amount = amount + (amount * getCustomer().getCheckCharge());
+
             transactions[tranIndex++] = new Transaction(this.customer.getCustomerNumber(), 0, amount, "CR");
             if(amount > this.balance) {
                 amount = amount + this.customer.getOverdraftPenalty();

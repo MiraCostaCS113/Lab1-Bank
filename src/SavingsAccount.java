@@ -19,16 +19,16 @@ public class SavingsAccount extends Account{
      */
     public double deposit(double amount){
         if(amount>0){
-// add an new transation to the array transactions with customer number, 0 trantyp, amount, fees "DEP"
-            Transaction transactions = new Transaction(this.customer.getCustomerNumber(), 0, amount, "DEP");
-// add the amount to the balance
+            // add an new transation to the array transactions with customer number, 0 trantyp, amount, fees "DEP"
+            Transaction transaction = new Transaction(this.customer.getCustomerNumber(), 0, amount, "DEP");
+            // add the amount to the balance
             this.balance = this.balance + amount;
-// call the addinterest method
+            // call the addinterest method
             this.addInterest();
-// add one to the tranIndex
-
+            // add one to the tranIndex
+            transactions[tranIndex++] = transaction;
         }
-// return balance
+        // return balance
         return balance;
 
     }
@@ -43,11 +43,12 @@ public class SavingsAccount extends Account{
     public double withdrawal(double amount){
         if(amount > 0 ) {
             // add an new transation to the array transactions with customer number, 0 trantyp, amount, fees "CR"
-            Transaction transactions = new Transaction(this.customer.getCustomerNumber(),0,amount,"CR");
+            Transaction transaction = new Transaction(this.customer.getCustomerNumber(),0,amount,"CR");
             // subtract the amount from the balance
             this.balance = this.balance  - amount;
 
             // add one to the tranIndex
+            transactions[tranIndex++] = transaction;
         }
 
         // return the balance
@@ -65,13 +66,13 @@ public class SavingsAccount extends Account{
         double amount = this.balance *this.customer.getSavingsInterest();
         if (amount >0) {
             // add an new transation to the array transactions with customer number, 0 trantyp, amount, fees "CR"
-            Transaction transactions = new Transaction(this.customer.getCustomerNumber(),0,amount,"CR");
+            Transaction transaction = new Transaction(this.customer.getCustomerNumber(),0,amount,"CR");
 
             // add the amount to the balance
             this.balance = this.balance + amount;
 
-
             // add one to the tranIndex
+            transactions[tranIndex++] = transaction;
         }
         // return the balance
         return balance;
