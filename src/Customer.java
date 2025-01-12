@@ -2,7 +2,7 @@
  * Customer.java
  *
  */
-abstract class Customer {
+public abstract class Customer {
     private String name;
     private String address;
     private int age;
@@ -108,7 +108,7 @@ abstract class Customer {
      * pre: phone number must be a not null string
      * post: customer's phone number changed to phoneNumber
      Programming Project Solutions
-     * @param phoneNumber New number
+     * @param telephoneNumber New number
      */
     public void setTelephoneNumber(String telephoneNumber){
         this.telephoneNumber = telephoneNumber;
